@@ -42,17 +42,19 @@ export const useContactForm = () => {
 
     try {
       // Netlify expects form data to be URL-encoded
-      const formData = new URLSearchParams()
-      formData.append('form-name', 'contact')
-      formData.append('name', name.value)
-      formData.append('email', email.value)
-      formData.append('message', message.value)
+      const body = new URLSearchParams()
+      body.append('form-name', 'contact')
+      body.append('name', name.value)
+      body.append('email', email.value)
+      body.append('message', message.value)
 
-      await $fetch('/', {
+      const response = await fetch('/', {
         method: 'POST',
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formData.toString()
+        body: body.toString()
       })
+
+      if (!response.ok) throw new Error('Network response was not ok')
 
       isSuccess.value = true
       name.value = ''
