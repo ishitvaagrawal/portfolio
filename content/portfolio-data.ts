@@ -74,7 +74,7 @@ export const personalInfo: PersonalInfo = {
   location: "India",
   email: "Ishitva26@gmail.com",
   resumeUrl: "https://drive.google.com/file/d/1Jt-BVtIYoK1SWSyLSdBJGwqRXP8dU7x_/view?usp=sharing",
-  formspreeId: "your-id-here",
+  formspreeId: "xnjlvjpv",
   photo: "/ishitva.jpg",
   socials: {
     github: "https://github.com/ishitvaagrawal",
