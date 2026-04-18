@@ -36,30 +36,34 @@ export const useContactForm = () => {
 
   const submitForm = async () => {
     if (!validateForm()) return
-    
+
     isLoading.value = true
-    isSuccess.value = false
     isError.value = false
+    isSuccess.value = false
 
     try {
       const response = await fetch(`https://formspree.io/f/${personalInfo.formspreeId}`, {
         method: 'POST',
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
         body: JSON.stringify({
           name: name.value,
           email: email.value,
-          message: message.value
-        })
+          message: message.value,
+        }),
       })
 
-      if (!response.ok) throw new Error('Network response was not ok')
-
-      isSuccess.value = true
-      name.value = ''
-      email.value = ''
-      message.value = ''
-    } catch (error) {
-      console.error('Contact form error', error)
+      if (response.ok) {
+        isSuccess.value = true
+        name.value = ''
+        email.value = ''
+        message.value = ''
+      } else {
+        isError.value = true
+      }
+    } catch {
       isError.value = true
     } finally {
       isLoading.value = false
