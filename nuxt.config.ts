@@ -2,15 +2,15 @@ export default defineNuxtConfig({
   // SSG — generates static files in .output/public
   // User will host this folder themselves
   nitro: {
-    preset: 'static'
+    preset: "cloudflare_module",
+
+    cloudflare: {
+      deployConfig: true,
+      nodeCompat: true
+    }
   },
 
-  modules: [
-    '@nuxt/ui',     // Tailwind v4 + Reka UI components included
-    '@nuxt/image',  // auto WebP, lazy loading, responsive srcset
-    '@nuxt/fonts',  // font loading without render-blocking scripts
-    '@nuxt/icon',   // Simple Icons + Heroicons
-  ],
+  modules: ["nitro-cloudflare-dev"],
 
   // Image configuration — using plain <img> for static reliability
   image: {
