@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f7fee7;
+  --color-primary-100: #ecfccb;
+  --color-primary-200: #d9f99d;
+  --color-primary-300: #bef264;
+  --color-primary-400: #a3e635;
+  --color-primary-500: #C8F542;
+  --color-primary-600: #9DB832;
+  --color-primary-700: #4d7c0f;
+  --color-primary-800: #3f6212;
+  --color-primary-900: #365314;
+  --color-primary-950: #1a2e05;
+}
+
+:root {
+  --color-background:    #0A0A0A;
+  --color-surface:       #111111;
+  --color-surface-hover: #1A1A1A;
+  --color-border:        #242424;
+  --color-border-hover:  #3A3A3A;
+  --color-text-primary:  #F0EBE1;
+  --color-text-secondary:#A89E8C;
+  --color-text-muted:    #5C5248;
+  --color-accent:        #C8F542;
+  --color-accent-dim:    #9DB832;
+  --color-accent-glow:   rgba(200, 245, 66, 0.10);
+  
+  --font-heading:        'Space Grotesk', sans-serif;
+  --font-body:           'Inter', sans-serif;
+  --font-mono:           'JetBrains Mono', monospace;
+  
+  --ease-expo:           cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast:       0.3s;
+  --duration-base:       0.6s;
+  --duration-slow:       1.0s;
+}
+
+html { 
+  scroll-behavior: smooth;
+}
+
+body { 
+  background-color: var(--color-background); 
+  color: var(--color-text-primary); 
+  font-family: var(--font-body);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-border);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 3px;
+}
+
+/* Text selection */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-background);
+}
+
+/* Focus-visible */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* All headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Animations */
+@keyframes blinkCursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes slideInFromLeft {
+  from { 
+    transform: translateX(-100%); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes fadeInUp {
+  from { 
+    transform: translateY(20px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
