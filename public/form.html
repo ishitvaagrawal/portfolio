@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Form Proxy</title>
+</head>
+<body>
+    <!-- This file exists only to help Netlify's crawler find the form. It is never seen by users. -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+        <input type="hidden" name="form-name" value="contact" />
+    </form>
+</body>
+</html>
