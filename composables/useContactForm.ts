@@ -41,23 +41,23 @@ export const useContactForm = () => {
     isError.value = false
 
     try {
-      const response = await $fetch('/api/contact', {
+      // Netlify expects form data to be URL-encoded
+      const formData = new URLSearchParams()
+      formData.append('form-name', 'contact')
+      formData.append('name', name.value)
+      formData.append('email', email.value)
+      formData.append('message', message.value)
+
+      await $fetch('/', {
         method: 'POST',
-        body: {
-          name: name.value,
-          email: email.value,
-          message: message.value
-        }
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formData.toString()
       })
 
-      if (response && response.success) {
-        isSuccess.value = true
-        name.value = ''
-        email.value = ''
-        message.value = ''
-      } else {
-        isError.value = true
-      }
+      isSuccess.value = true
+      name.value = ''
+      email.value = ''
+      message.value = ''
     } catch (error) {
       console.error('Contact form error', error)
       isError.value = true

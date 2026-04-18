@@ -51,7 +51,20 @@ const {
             </div>
             
             <!-- Form State -->
-            <form v-else @submit.prevent="submitForm" class="text-left flex flex-col gap-6">
+            <form 
+              v-else 
+              name="contact" 
+              method="POST" 
+              data-netlify="true" 
+              netlify-honeypot="bot-field"
+              @submit.prevent="submitForm" 
+              class="text-left flex flex-col gap-6"
+            >
+              <!-- Hidden input for Netlify bot protection -->
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="hidden">
+                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+              </p>
               
               <div v-if="isError" class="p-4 rounded-md bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-body">
                 Failed to send message. Please try again later or use the direct email link below.
@@ -61,6 +74,7 @@ const {
                 <label for="name" class="text-sm font-mono text-[#A89E8C]">Name</label>
                 <UInput 
                   id="name" 
+                  name="name"
                   v-model="name" 
                   placeholder="John Doe" 
                   :ui="{ base: 'bg-[#0A0A0A]' }"
@@ -73,6 +87,7 @@ const {
                 <label for="email" class="text-sm font-mono text-[#A89E8C]">Email</label>
                 <UInput 
                   id="email" 
+                  name="email"
                   type="email" 
                   v-model="email" 
                   placeholder="john@example.com"
@@ -86,6 +101,7 @@ const {
                 <label for="message" class="text-sm font-mono text-[#A89E8C]">Message</label>
                 <UTextarea 
                   id="message" 
+                  name="message"
                   v-model="message" 
                   placeholder="Hello! I have a project in mind..." 
                   :rows="5"
