@@ -1,5 +1,7 @@
 # Ishitva Agrawal — Portfolio
 
+[![Live Site](https://img.shields.io/badge/Live-Site-C8F542?style=for-the-badge&logo=vercel&logoColor=black)](https://ishitvaagrawal.vercel.app/)
+
 A high-performance, visually stunning personal portfolio built with Nuxt 3 (Nuxt 4 framework), Tailwind CSS v4, and GSAP. 
 
 ## ✨ Features
