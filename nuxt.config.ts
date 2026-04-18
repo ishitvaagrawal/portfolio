@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   // SSG — generates static files in .output/public
   // User will host this folder themselves
-  nitro: { preset: 'static' },
+  nitro: { preset: 'cloudflare-pages' },
 
   modules: [
     '@nuxt/ui',     // Tailwind v4 + Reka UI components included

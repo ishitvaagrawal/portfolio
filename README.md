@@ -48,15 +48,19 @@ A high-performance, visually stunning personal portfolio built with Nuxt 3 (Nuxt
 
 ## 📦 Deployment
 
-This project is optimized for **Vercel**.
+This project is optimized for **Cloudflare Pages**.
 
-1. **Vercel Setup**:
-   - Connect your GitHub repo to Vercel.
-   - Vercel will auto-detect Nuxt. Click **Deploy**.
-2. **Formspree Setup**:
+1. **Cloudflare Setup**:
+   - Log in to the [Cloudflare Dashboard](https://dash.cloudflare.com/).
+   - Go to **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**.
+   - Select your `portfolio` repo.
+2. **Build Settings**:
+   - **Framework preset**: Nuxt.js
+   - **Build command**: `pnpm run generate`
+   - **Build output directory**: `.output/public`
+3. **Formspree Setup**:
    - Create a free account at [formspree.io](https://formspree.io/).
-   - Create a new form and get your **Form ID**.
-   - Update `formspreeId` in `content/portfolio-data.ts`.
+   - Create a new form, get your **Form ID**, and update it in `content/portfolio-data.ts`.
 
 ## 📝 License
 
