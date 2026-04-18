@@ -12,6 +12,7 @@ export interface PersonalInfo {
   location: string;
   email: string;
   resumeUrl: string;
+  formspreeId: string;
   photo: string;
   socials: Socials;
 }
@@ -73,6 +74,7 @@ export const personalInfo: PersonalInfo = {
   location: "India",
   email: "Ishitva26@gmail.com",
   resumeUrl: "https://drive.google.com/file/d/1Jt-BVtIYoK1SWSyLSdBJGwqRXP8dU7x_/view?usp=sharing",
+  formspreeId: "your-id-here",
   photo: "/ishitva.jpg",
   socials: {
     github: "https://github.com/ishitvaagrawal",

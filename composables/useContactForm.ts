@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+import { personalInfo } from '~/content/portfolio-data'
 
 export const useContactForm = () => {
   const name = ref('')
@@ -41,17 +42,14 @@ export const useContactForm = () => {
     isError.value = false
 
     try {
-      // Netlify expects form data to be URL-encoded
-      const body = new URLSearchParams()
-      body.append('form-name', 'contact')
-      body.append('name', name.value)
-      body.append('email', email.value)
-      body.append('message', message.value)
-
-      const response = await fetch('/', {
+      const response = await fetch(`https://formspree.io/f/${personalInfo.formspreeId}`, {
         method: 'POST',
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: body.toString()
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          name: name.value,
+          email: email.value,
+          message: message.value
+        })
       })
 
       if (!response.ok) throw new Error('Network response was not ok')
