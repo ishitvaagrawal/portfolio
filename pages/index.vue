@@ -21,7 +21,8 @@ useHead({
     { property: 'og:image', content: '/og-image.jpg' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://ishitva.com' } // Placeholder URL
+    // TODO: Update the canonical URL once you have your final domain name (e.g., https://yourdomain.com)
+    { rel: 'canonical', href: 'https://ishitvaagrawal.com' }
   ]
 })
 </script>

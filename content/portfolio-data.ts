@@ -153,7 +153,7 @@ export const projects: Project[] = [
     longDescription: "Engineered an autonomous agentic AI system that improved task automation efficiency by 40%. Implemented RAG techniques to boost information retrieval accuracy by 25%, and fine-tuned open-source models using QLoRA to reduce training time by 30% while maintaining performance.",
     tags: ["AI Agents", "RAG", "QLoRA", "LLM Fine-tuning"],
     githubUrl: "https://github.com",
-    image: "",
+    image: "/projects/price-prediction.png",
     isFeatured: true,
     category: "AI",
     year: "2025"
@@ -165,7 +165,7 @@ export const projects: Project[] = [
     longDescription: "Built a Python recommendation engine combining Popularity-based, Content-based (TF-IDF with Cosine Similarity), and Collaborative Filtering (SVD). Integrated all three approaches into a unified pipeline, boosting accuracy by 20% and improving scalability.",
     tags: ["Python", "Pandas", "Scikit-learn", "Machine Learning"],
     githubUrl: "https://github.com",
-    image: "",
+    image: "/projects/movie-recommendation.png",
     isFeatured: true,
     category: "AI",
     year: "2025"
@@ -177,7 +177,7 @@ export const projects: Project[] = [
     longDescription: "Led the frontend development using React in a 6-member team. Enhanced UX by 40% with 10+ API integrations, and refined the overall app with Redux, Node.js, Express, and MongoDB, cutting load times by 25%.",
     tags: ["React", "Node.js", "Express", "MongoDB", "Redux"],
     githubUrl: "https://github.com",
-    image: "",
+    image: "/projects/pizza-webapp.png",
     isFeatured: false,
     category: "Fullstack",
     year: "2023"

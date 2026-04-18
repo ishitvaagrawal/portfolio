@@ -1,7 +1,7 @@
-/**
- * FastAPI backend for Ishitva Agrawal Portfolio.
- * Handles contact form submissions via SMTP.
- */
+# /**
+#  * FastAPI backend for Ishitva Agrawal Portfolio.
+#  * Handles contact form submissions via SMTP.
+#  */
 import os
 import smtplib
 from email.mime.text import MIMEText
