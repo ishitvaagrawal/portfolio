@@ -12,6 +12,11 @@ export default defineNuxtConfig({
     '@nuxt/icon',   // Simple Icons + Heroicons
   ],
 
+  // Image configuration — using plain <img> for static reliability
+  image: {
+    provider: 'none',
+  },
+
   // Load fonts efficiently — no FOUT
   fonts: {
     families: [
@@ -47,6 +52,11 @@ export default defineNuxtConfig({
   routeRules: { '/**': { prerender: true } },
 
   srcDir: '.',
+
+  // Use static paths for images to ensure compatibility with all static hosts
+  image: {
+    provider: 'none'
+  },
 
   compatibilityDate: '2024-11-01',
 })

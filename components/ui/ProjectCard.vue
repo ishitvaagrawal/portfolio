@@ -20,14 +20,12 @@ defineProps<{
       'relative overflow-hidden bg-gradient-to-br from-[#1A1A1A] to-[#0A0A0A]',
       project.isFeatured ? 'lg:w-1/2 lg:shrink-0' : 'aspect-video'
     ]">
-      <NuxtImg 
+      <img 
         v-if="project.image" 
         :src="project.image" 
         :alt="project.title"
         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         loading="lazy"
-        format="webp"
-        quality="80"
       />
       <div v-else class="absolute inset-0 flex items-center justify-center opacity-20">
         <Icon name="heroicons:photo" class="w-16 h-16 text-[#A89E8C]" />

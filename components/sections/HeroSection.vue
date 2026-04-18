@@ -78,13 +78,11 @@ const setRef = (el: any) => {
           <div class="absolute -bottom-8 -left-8 w-32 h-32 border rounded-full border-[#242424] z-0"></div>
           
           <div class="relative z-10 w-64 h-80 sm:w-80 sm:h-96 transform -rotate-2 rounded-xl overflow-hidden border border-[#C8F542] shadow-[0_0_30px_rgba(200,245,66,0.15)] bg-[#111111]">
-            <NuxtImg 
+            <img 
               :src="personalInfo.photo" 
               alt="Ishitva Agrawal" 
               class="w-full h-full object-cover"
               loading="eager"
-              format="webp"
-              quality="80"
             />
           </div>
         </div>
@@ -93,13 +91,11 @@ const setRef = (el: any) => {
              class="w-64 h-64 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px] relative" 
              :ref="setRef">
           <div class="w-full h-full" style="clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 15% 100%, 0 85%);">
-            <NuxtImg 
+            <img 
               :src="personalInfo.photo" 
               alt="Ishitva Agrawal" 
               class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               loading="eager"
-              format="webp"
-              quality="80"
             />
           </div>
         </div>
